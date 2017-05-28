@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocalePanel renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "alignSelf": "flex-start",
+      "display": "flex",
+      "flexGrow": 0,
+    }
+  }
+>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#f7f7f7",
+        "border": 0,
+        "borderBottom": "1px solid #d3d3d3",
+        "borderRight": "1px solid #d3d3d3",
+        "flexGrow": 1,
+        "fontWeight": "bold",
+        "height": "50px",
+        "lineHeight": "30px",
+        "padding": "5px",
+        "textAlign": "center",
+        "textTransform": "uppercase",
+        "transitionDuration": "100ms",
+        "transitionProperty": "background",
+        "transitionTimingFunction": "linear",
+        "width": "100px",
+      }
+    }
+    type="button"
+  >
+    en
+  </button>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "none",
+        "border": 0,
+        "borderBottom": "1px solid #d3d3d3",
+        "borderRight": "1px solid #d3d3d3",
+        "flexGrow": 1,
+        "height": "50px",
+        "lineHeight": "30px",
+        "padding": "5px",
+        "textAlign": "center",
+        "textTransform": "uppercase",
+        "transitionDuration": "100ms",
+        "transitionProperty": "background",
+        "transitionTimingFunction": "linear",
+        "width": "100px",
+      }
+    }
+    type="button"
+  >
+    de
+  </button>
+</div>
+`;
