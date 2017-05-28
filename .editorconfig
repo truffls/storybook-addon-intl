@@ -6,5 +6,5 @@ indent_size = 4
 indent_style = space
 insert_final_newline = true
 
-[package.json]
+[{package.json,.travis.yml}]
 indent_size = 2
