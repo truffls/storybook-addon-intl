@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-intl",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Addon to provide locale switcher and react-intl for storybook",
   "main": "dist/index.js",
   "scripts": {
