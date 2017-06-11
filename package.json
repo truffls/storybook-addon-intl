@@ -50,5 +50,8 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-intl": "^2.2.0"
+  },
+  "engines": {
+    "node": ">=6"
   }
 }
