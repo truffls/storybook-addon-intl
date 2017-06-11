@@ -12,6 +12,8 @@ First, install the addon
 npm install -D storybook-addon-intl
 ```
 
+_Note: Following peer dependencies are required: `@storybook/react`, `react` and `react-intl`._
+
 Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
 
 ```js
@@ -22,8 +24,8 @@ In your `config.js` import the `setIntlConfig` and `withIntl` function. Use `set
 for `react-intl` and `withIntl´ as decorator.
 
 ```js
-import { addDecorator, configure } from '@kadira/storybook';
-import { setIntlConfig, withIntl } from '../preview';
+import { addDecorator, configure } from '@storybook/react';
+import { setIntlConfig, withIntl } from 'storybook-addon-intl/preview';
 
 // Load the locale data for all your defined locales
 import { addLocaleData } from 'react-intl';
