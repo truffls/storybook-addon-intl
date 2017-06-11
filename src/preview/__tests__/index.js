@@ -1,4 +1,4 @@
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 import { setIntlConfig, withIntl } from '../';
 import { EVENT_SET_CONFIG_ID } from '../../shared';
 import { omit } from '../../utils';
@@ -8,7 +8,7 @@ describe('setIntlConfig', function () {
     test('should set config', function () {
         //=== Before ===
         const messages = [];
-        addons._channel = {
+        addons.channel = {
             emit: (...args) => messages.push(args),
         };
 
@@ -31,14 +31,14 @@ describe('setIntlConfig', function () {
 
 
         //=== After ===
-        addons._channel = null;
+        addons.channel = null;
     });
 });
 
 describe('withIntl', () => {
     test('should return instance of component WithIntl', () => {
         //=== Before ===
-        addons._channel = {
+        addons.channel = {
             emit: () => {},
             on: () => {},
             removeListener: () => {}
@@ -56,12 +56,12 @@ describe('withIntl', () => {
 
 
         //=== After ===
-        addons._channel = null;
+        addons.channel = null;
     });
 
     test('should pass correct props to component', () => {
         //=== Before ===
-        addons._channel = {
+        addons.channel = {
             emit: () => {},
             on: () => {},
             removeListener: () => {}
@@ -91,12 +91,12 @@ describe('withIntl', () => {
         // Check if props match
         expect(element.props).toEqual({
             ...expectedProps,
-            channel: addons._channel,
+            channel: addons.channel,
             children: story()
         });
 
 
         //=== After ===
-        addons._channel = null;
+        addons.channel = null;
     });
 });

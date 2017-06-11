@@ -27,23 +27,26 @@
     "url": "https://github.com/truffls/storybook-addon-intl/issues"
   },
   "homepage": "https://github.com/truffls/storybook-addon-intl#readme",
+  "dependencies": {
+    "@storybook/addons": "^3.1.0",
+    "prop-types": "^15.5.0"
+  },
   "devDependencies": {
-    "@kadira/storybook": "^2.20.1",
+    "@storybook/react": "^3.1.0",
     "babel-cli": "^6.14.0",
     "babel-jest": "^20.0.3",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "jest": "^20.0.0",
-    "prop-types": "^15.5.0",
-    "react": "^15.5.0",
+    "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.0",
-    "react-dom": "^15.5.0",
+    "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.0",
     "shelljs": "^0.7.4"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "^1.6.0",
+    "@storybook/react": "^3.1.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-intl": "^2.2.0"

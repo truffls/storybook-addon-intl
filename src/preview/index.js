@@ -1,5 +1,5 @@
 import React from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 import WithIntl from './containers/WithIntl';
 import { EVENT_SET_CONFIG_ID } from '../shared';
 import { omit } from '../utils';

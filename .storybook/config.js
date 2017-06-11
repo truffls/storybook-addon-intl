@@ -1,4 +1,4 @@
-import { addDecorator, configure } from '@kadira/storybook';
+import { addDecorator, configure } from '@storybook/react';
 import { setIntlConfig, withIntl } from '../dist';
 
 // Load the locale data for all your defined locales
