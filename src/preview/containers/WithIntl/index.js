@@ -59,7 +59,15 @@ class WithIntl extends React.Component {
 }
 
 WithIntl.propTypes = {
-    intlConfig: PropTypes.shape(omit(IntlProvider.propTypes, ['children'])).isRequired,
+    intlConfig: PropTypes.shape(
+      locale: PropTypes.string,
+      formats: PropTypes.object,
+      messages: PropTypes.object,
+      textComponent: PropTypes.any,
+      defaultLocale : PropTypes.string,
+      initialNow: PropTypes.any,
+      defaultFormats: PropTypes.object
+    ).isRequired,
     locales: PropTypes.arrayOf(PropTypes.string).isRequired,
     getMessages: PropTypes.func.isRequired,
     channel: PropTypes.shape({
