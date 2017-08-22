@@ -51,7 +51,7 @@ class WithIntl extends React.Component {
         const messages = getMessages(locale);
 
         return (
-            <IntlProvider {...intlConfig} locale={locale} messages={messages}>
+            <IntlProvider {...intlConfig} key={locale} locale={locale} messages={messages}>
                 {children}
             </IntlProvider>
         );
