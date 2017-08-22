@@ -42,6 +42,7 @@
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.0",
     "react-dom": "^15.5.4",
+    "react-intl": "^2.3.0",
     "react-test-renderer": "^15.5.0",
     "shelljs": "^0.7.4"
   },

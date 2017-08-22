@@ -10,7 +10,7 @@ class WithIntl extends React.Component {
         super(props);
 
         this.state = {
-            locale: props.intlConfig.defaultLocale
+            locale: props.intlConfig.defaultLocale || null
         };
 
         this.setLocale = this.setLocale.bind(this);
