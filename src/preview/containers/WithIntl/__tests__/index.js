@@ -158,4 +158,34 @@ describe('WithIntl', () => {
         expect(element.type).toBe(IntlProvider);
         expect(element.props).toEqual(expectedIntlProviderProps);
     });
+
+    test('defaults locale to intlConfig.defaultLocale value', () => {
+        const intlConfig = {
+            defaultLocale: 'pt'
+        };
+
+        const locales = ['en', 'pt']
+
+        const getMessages = () => ({ 'text': 'My Text' });
+        const channel = {
+            emit: () => {},
+            on: () => {},
+            removeListener: () => {}
+        };
+
+        const component = renderer.create(
+            <WithIntl
+                intlConfig={intlConfig}
+                locales={locales}
+                getMessages={getMessages}
+                channel={channel}
+            >
+                <span />
+            </WithIntl>
+        );
+
+        const instance = component.getInstance();
+
+        expect(instance.state).toEqual({ locale: 'pt' });
+    });
 });
