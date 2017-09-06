@@ -25,7 +25,7 @@ for `react-intl` and `withIntl´ as decorator.
 
 ```js
 import { addDecorator, configure } from '@storybook/react';
-import { setIntlConfig, withIntl } from 'storybook-addon-intl/dist/preview';
+import { setIntlConfig, withIntl } from 'storybook-addon-intl';
 
 // Load the locale data for all your defined locales
 import { addLocaleData } from 'react-intl';
