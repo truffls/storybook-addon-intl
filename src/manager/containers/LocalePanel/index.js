@@ -11,7 +11,8 @@ import LocaleButton from '../../components/LocaleButton';
 const panelStyle = {
     flexGrow: 0,
     display: 'flex',
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    flexWrap: 'wrap'
 };
 
 class LocalePanel extends React.Component {

@@ -1,5 +1,4 @@
 export const defaultStyle = {
-    flexGrow: 1,
     height: '50px',
     width: '100px',
     padding: '5px',

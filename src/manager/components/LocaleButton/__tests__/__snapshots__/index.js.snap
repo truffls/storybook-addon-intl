@@ -9,7 +9,6 @@ exports[`LocaleButton renders correctly 1`] = `
       "border": 0,
       "borderBottom": "1px solid #d3d3d3",
       "borderRight": "1px solid #d3d3d3",
-      "flexGrow": 1,
       "height": "50px",
       "lineHeight": "30px",
       "padding": "5px",
