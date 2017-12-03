@@ -12,7 +12,7 @@ First, install the addon
 npm install -D storybook-addon-intl
 ```
 
-_Note: Following peer dependencies are required: `@storybook/react`, `react` and `react-intl`._
+_Note: Following peer dependencies are required: `@storybook/addons`, `@storybook/react`, `react` and `react-intl`._
 
 Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
 
@@ -57,3 +57,14 @@ addDecorator(withIntl);
 // Run storybook
 configure(() => require('./stories'), module);
 ```
+
+## Troubleshooting
+
+##### _Accessing nonexistent addons channel_ error:
+This error can be caused by multiple conflicting versions of `@storybook/addons` in your app.
+
+-   Ensure that the entries starting with `@storybook/addon-` in your `package.json` refer to the same and latest version.
+-   Add the latest version of `@storybook/addons` to your app's `dependencies` and reinstall all modules.
+
+If the above steps don't solve the issue, please read the [storybook documentation](https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel) on this topic:
+> Most of the time, the fix is deleting the node_modules folder with any package-lock.json or yarn.lock and reinstalling.
