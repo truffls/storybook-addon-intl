@@ -28,11 +28,11 @@
   },
   "homepage": "https://github.com/truffls/storybook-addon-intl#readme",
   "dependencies": {
-    "@storybook/addons": "^3.1.0",
     "prop-types": "^15.5.0"
   },
   "devDependencies": {
-    "@storybook/react": "^3.1.0",
+    "@storybook/addons": "^3.2.16",
+    "@storybook/react": "^3.2.16",
     "babel-cli": "^6.14.0",
     "babel-jest": "^20.0.3",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -47,7 +47,8 @@
     "shelljs": "^0.7.4"
   },
   "peerDependencies": {
-    "@storybook/react": "^3.1.0",
+    "@storybook/addons": "^3.2.16",
+    "@storybook/react": "^3.2.16",
     "react": "^15.4.0 || ^16.0.0",
     "react-intl": "^2.3.0"
   },
