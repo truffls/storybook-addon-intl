@@ -7,11 +7,22 @@ import { RenderFunction, Renderable } from "@storybook/react";
 
 export function register(): undefined;
 
-export function setIntlConfig(config: {
-    locales: string[];
-    defaultLocale: string;
-    getMessages: (locale: string) => string;
-}): undefined;
+export type WithIntlProps = {
+    locale?: string,
+    formats?: object,
+    messages?: object,
+    textComponent?: any,
+    defaultLocale?: string,
+    initialNow?: any,
+    defaultFormats?: object
+}
+
+export interface Config extends WithIntlProps {
+    locales: string[]
+    getMessages: (locale: string) => string
+}
+
+export function setIntlConfig(config: Config): undefined;
 
 export function withIntl(
     story: RenderFunction,
