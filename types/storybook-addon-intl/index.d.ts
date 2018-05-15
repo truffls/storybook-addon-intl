@@ -4,20 +4,11 @@
 // Definitions: https://github.com/truffls/storybook-addon-intl
 
 import { RenderFunction, Renderable } from "@storybook/react";
+import { IntlProvider } from 'react-intl'
 
 export function register(): undefined;
 
-export type WithIntlProps = {
-    locale?: string,
-    formats?: object,
-    messages?: object,
-    textComponent?: any,
-    defaultLocale?: string,
-    initialNow?: any,
-    defaultFormats?: object
-}
-
-export interface Config extends WithIntlProps {
+export interface Config extends IntlProvider.Props {
     locales: string[]
     getMessages: (locale: string) => string
 }
