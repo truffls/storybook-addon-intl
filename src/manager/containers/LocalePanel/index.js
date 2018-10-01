@@ -65,9 +65,10 @@ class LocalePanel extends React.Component {
     }
 
     render () {
+        const { active } = this.props;
         const { activeLocale, locales } = this.state;
 
-        if (!locales.length) {
+        if (!active || !locales.length) {
             return null;
         }
 
@@ -91,6 +92,7 @@ class LocalePanel extends React.Component {
 }
 
 LocalePanel.propTypes = {
+    active: PropTypes.bool.isRequired,
     channel: PropTypes.shape({
         emit: PropTypes.func.isRequired,
         on: PropTypes.func.isRequired,

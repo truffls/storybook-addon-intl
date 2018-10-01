@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LocalePanel renders correctly 1`] = `
+exports[`LocalePanel renders correctly when active 1`] = `
 <div
   style={
     Object {
