@@ -7,7 +7,12 @@ export function register () {
     addons.register(ADDON_ID, () => {
         addons.addPanel(PANEL_ID, {
             title: 'Locales',
-            render: () => (<LocalePanel channel={addons.getChannel()} />)
+            render: (props) => (
+                <LocalePanel
+                    active={!props || props.active}
+                    channel={addons.getChannel()}
+                />
+            )
         });
     });
 }
