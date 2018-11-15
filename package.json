@@ -47,8 +47,8 @@
     "shelljs": "^0.7.4"
   },
   "peerDependencies": {
-    "@storybook/addons": "^3.2.16",
-    "@storybook/react": "^3.2.16",
+    "@storybook/addons": "^3.2.16 || ^4.0.6",
+    "@storybook/react": "^3.2.16 || ^4.0.6",
     "react": "^15.4.0 || ^16.0.0",
     "react-intl": "^2.3.0"
   },
