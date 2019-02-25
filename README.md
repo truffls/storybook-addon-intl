@@ -41,13 +41,33 @@ const messages = {
     'de': { 'button.label': 'Klick mich!' }
 };
 
+// Provide your formats (optional)
+const formats = {
+    'en': {
+            'date': {
+                'year-only': {
+                    'year': '2-digit',
+                },
+            },
+        },
+    'de': {
+            'date': {
+                'year-only': {
+                    'year': 'numeric',
+                },
+            },
+        },
+};
+
 const getMessages = (locale) => messages[locale];
+const getFormats = (locale) => formats[locale];
 
 // Set intl configuration
 setIntlConfig({
     locales: ['en', 'de'],
     defaultLocale: 'en',
-    getMessages
+    getMessages,
+    getFormats,
 });
 
 // Register decorator

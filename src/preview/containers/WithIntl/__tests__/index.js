@@ -159,6 +159,50 @@ describe('WithIntl', () => {
         expect(element.props).toEqual(expectedIntlProviderProps);
     });
 
+    test('set formats prop correctly when getFormats() is defined', () => {
+        const intlConfig = {
+            fallbackLocale: 'en'
+        };
+        const locales = ['en', 'de'];
+        const defaultLocale = 'en';
+        const getMessages = () => ({ 'text': 'My Text' });
+        const getFormats = () => ({ 'date': { 'year-only': { 'year': '2-digit' } } });
+        const channel = {
+            emit: () => {},
+            on: () => {},
+            removeListener: () => {}
+        };
+        const children = (<span />);
+        const localeToSet = 'en';
+
+        const component = renderer.create(
+            <WithIntl
+                intlConfig={intlConfig}
+                locales={locales}
+                defaultLocale={defaultLocale}
+                getMessages={getMessages}
+                getFormats={getFormats}
+                channel={channel}
+            >
+                {children}
+            </WithIntl>
+        );
+
+        let instance = component.getInstance();
+        instance.setLocale(localeToSet);
+
+        const expectedIntlProviderProps = {
+            ...intlConfig,
+            locale: localeToSet,
+            messages: getMessages(localeToSet),
+            formats: getFormats(localeToSet),
+            children
+        };
+
+        const element = instance.render();
+        expect(element.props).toEqual(expectedIntlProviderProps);
+    });
+
     test('defaults locale to intlConfig.defaultLocale value', () => {
         const intlConfig = {
             defaultLocale: 'pt'
