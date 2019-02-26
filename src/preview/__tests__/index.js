@@ -18,6 +18,7 @@ describe('setIntlConfig', function () {
             locales: ['en', 'de'],
             defaultLocale: 'en',
             getMessages: () => ({ 'text': 'Lorem ipsum' }),
+            getFormats: () => ({ 'date': { 'year-only': { 'year': '2-digit' } } }),
             unkownProperty: true
         };
         const expectedConfig = {
@@ -73,13 +74,15 @@ describe('withIntl', () => {
         const config = {
             locales: ['en', 'de'],
             defaultLocale: 'en',
-            getMessages: () => ({ 'text': 'Lorem ipsum' })
+            getMessages: () => ({ 'text': 'Lorem ipsum' }),
+            getFormats: () => ({ 'date': { 'year-only': { 'year': '2-digit' } } }),
         };
 
         const expectedProps = {
-            intlConfig: omit(config, ['locales', 'getMessages']),
+            intlConfig: omit(config, ['locales', 'getMessages', 'getFormats']),
             locales: config.locales,
-            getMessages: config.getMessages
+            getMessages: config.getMessages,
+            getFormats: config.getFormats,
         };
 
         // Set the configuraton

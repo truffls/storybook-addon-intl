@@ -43,19 +43,33 @@ class WithIntl extends React.Component {
         const {
             children,
             getMessages,
-
+            getFormats,
             intlConfig
         } = this.props;
 
         const { locale } = this.state;
         const messages = getMessages(locale);
 
+        const customProps = {
+            key: locale,
+            locale,
+            messages,
+        };
+        // if getFormats is not defined, we don't want to specify the formats property
+        if(getFormats) {
+            customProps.formats = getFormats(locale);
+        } 
+
         return (
-            <IntlProvider {...intlConfig} key={locale} locale={locale} messages={messages}>
+            <IntlProvider {...intlConfig} {...customProps}>
                 {children}
             </IntlProvider>
         );
     }
+}
+
+WithIntl.defaultProps = {
+    getFormats: undefined
 }
 
 WithIntl.propTypes = {
@@ -70,6 +84,7 @@ WithIntl.propTypes = {
     }).isRequired,
     locales: PropTypes.arrayOf(PropTypes.string).isRequired,
     getMessages: PropTypes.func.isRequired,
+    getFormats: PropTypes.func,
     channel: PropTypes.shape({
         emit: PropTypes.func.isRequired,
         on: PropTypes.func.isRequired,

@@ -19,10 +19,10 @@ export const setIntlConfig = (config) => {
 export const withIntl = (story) => {
     const channel = addons.getChannel();
 
-    const intlConfig = omit(_config, ['locales', 'getMessages']);
+    const intlConfig = omit(_config, ['locales', 'getMessages', 'getFormats']);
 
     return (
-        <WithIntl intlConfig={intlConfig} locales={_config.locales} getMessages={_config.getMessages} channel={channel}>
+        <WithIntl intlConfig={intlConfig} locales={_config.locales} getMessages={_config.getMessages} getFormats={_config.getFormats} channel={channel}>
             {story()}
         </WithIntl>
     );
