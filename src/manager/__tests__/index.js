@@ -48,11 +48,63 @@ describe('register', () => {
         expect(typeof panel.render).toBe('function');
 
         // Check if render function returns correct element
-        const element = panel.render({ active: true });
+        const element = panel.render({
+            active: true
+        });
         expect(element.type).toBe(LocalePanel);
 
         // Check if component receive correct props
-        expect(element.props).toEqual({ active: true, channel: addons.channel });
+        expect(element.props).toEqual({
+            active: true,
+            channel: addons.channel
+        });
+
+
+        //=== After ===
+        addons.loaders = {};
+        addons.panels = {};
+        addons.channel = null;
+    });
+
+    test('register panel correctly with key', () => {
+        //=== Before ===
+        addons.loaders = {};
+        addons.panels = {};
+        addons.channel = {
+            emit: () => {},
+            on: () => {},
+            removeListener: () => {}
+        };
+
+
+        //=== Test ===
+
+        // Register addon
+        register();
+        // Register panel
+        addons.loaders[ADDON_ID]();
+
+        // The panel should be registered
+        expect(typeof addons.panels[PANEL_ID]).toBe('object');
+
+        // Check if the panel has correct values
+        const panel = addons.panels[PANEL_ID];
+        expect(panel.title).toBe('Locales');
+        expect(typeof panel.render).toBe('function');
+
+        // Check if render function returns correct element
+        const element = panel.render({
+            key: 'intl/panel',
+            active: true
+        });
+        expect(element.type).toBe(LocalePanel);
+
+        // Check if component receive correct props
+        expect(element.props).toEqual({
+            active: true,
+            channel: addons.channel
+        });
+        expect(element.key).toEqual('intl/panel');
 
 
         //=== After ===
