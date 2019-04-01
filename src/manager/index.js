@@ -9,6 +9,7 @@ export function register () {
             title: 'Locales',
             render: (props) => (
                 <LocalePanel
+                    key={props && typeof props === 'object' && props.key || undefined}
                     active={!props || props.active}
                     channel={addons.getChannel()}
                 />

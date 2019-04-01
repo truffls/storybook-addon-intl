@@ -161,4 +161,26 @@ describe('LocalePanel', () => {
         tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
+
+    test('renders correctly with key', () => {
+        const channel = {
+            emit: () => {},
+            on: () => {},
+            removeListener: jest.fn()
+        };
+
+
+        const component = renderer.create(
+            <LocalePanel key="intl/panel" active channel={channel} />
+        );
+        const instance = component.getInstance();
+
+        let tree = component.toJSON();
+        expect(tree).toBe(null);
+
+
+        instance.setState({ locales: ['en', 'de'], activeLocale: 'en' });
+        tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+    })
 });
