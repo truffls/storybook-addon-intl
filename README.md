@@ -78,6 +78,23 @@ addDecorator(withIntl);
 configure(() => require('./stories'), module);
 ```
 
+Example config for `react-intl` V3:
+```
+import enLocaleData from '<assets>/lang/en.json'
+import esLocaleData from '<assets>/lang/es.json'
+
+const getMessages = locale =>
+  locale === 'en' ? enLocaleData : esLocaleData
+
+const intlConfig = {
+  locales: ['en', 'es'],
+  defaultLocale: 'en',
+  getMessages,
+}
+setIntlConfig(intlConfig)
+addDecorator(withIntl)
+```
+
 ## Troubleshooting
 
 ##### _Accessing nonexistent addons channel_ error:
