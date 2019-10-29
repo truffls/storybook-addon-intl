@@ -1,6 +1,7 @@
 # Intl Addon [![Build Status](https://travis-ci.org/truffls/storybook-addon-intl.svg?branch=master)](https://travis-ci.org/truffls/storybook-addon-intl)
 
 The Intl addon can be used to provide locale switcher and react-intl.
+[View the demo](https://truffls.github.io/storybook-addon-intl).
 
 ![](docs/screenshot.png)
 
