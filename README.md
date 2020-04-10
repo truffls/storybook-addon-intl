@@ -88,3 +88,43 @@ This error can be caused by multiple conflicting versions of `@storybook/addons`
 
 If the above steps don't solve the issue, please read the [storybook documentation](https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel) on this topic:
 > Most of the time, the fix is deleting the node_modules folder with any package-lock.json or yarn.lock and reinstalling.
+
+## upgrade storybook 5、6
+
+Add this line to your `main.js` file (create this file inside your storybook config directory if needed).
+
+```js
+module.exports = {
+  addons: [
+    "storybook-addon-intl"
+  ]
+};
+```
+
+In your `preview.js` import the `setIntlConfig` and `withIntl` function. Use `setIntlConfig` to set the configuration
+for `react-intl` and `withIntl´ as decorator.
+
+```javascript
+import { addDecorator } from "@storybook/react";
+import { setIntlConfig, withIntl } from "storybook-addon-intl";
+
+const locales = ["en-US", "zh-CN", "zh-TW"];
+
+// Provide your messages, or you can import local locale messages files.
+const messages = {
+  'en': { 'button.label': 'Click me!' },
+  'de': { 'button.label': 'Klick mich!' }
+};
+// Set intl configuration
+setIntlConfig({
+  defaultLocale: "en",
+  locales,
+  getMessages: locale => messages[locale],
+});
+
+// Register decorator
+addDecorator(withIntl);
+```
+
+### support older browsers
+If you want to support older browsers, you can view the documentation [Intl](https://github.com/andyearnshaw/Intl.js).
