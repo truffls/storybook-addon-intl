@@ -108,7 +108,7 @@ for `react-intl` and `withIntl´ as decorator.
 import { addDecorator } from "@storybook/react";
 import { setIntlConfig, withIntl } from "storybook-addon-intl";
 
-const locales = ["en-US", "zh-CN", "zh-TW"];
+const locales = ["en", "de"];
 
 // Provide your messages, or you can import local locale messages files.
 const messages = {
