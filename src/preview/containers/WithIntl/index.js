@@ -25,6 +25,9 @@ class WithIntl extends React.Component {
     }
 
     setLocale (locale) {
+        // Update html lang attribute
+        window.document.documentElement.lang = locale;
+
         this.setState({
             locale: locale
         });
