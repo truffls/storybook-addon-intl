@@ -1,4 +1,7 @@
+.github
 .storybook
 node_modules
-coverage
-.babelrc
+src
+.babelrc.js
+.editorconfig
+jest.config.js

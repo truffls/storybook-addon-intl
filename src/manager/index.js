@@ -1,19 +1,18 @@
+import { AddonPanel } from '@storybook/components';
+import { addons } from '@storybook/manager-api';
 import React from 'react';
-import addons from '@storybook/addons';
+import { ADDON_ID, PANEL_ID } from '../constants';
 import LocalePanel from './containers/LocalePanel';
-import { ADDON_ID, PANEL_ID } from '../shared';
 
-export function register () {
-    addons.register(ADDON_ID, () => {
-        addons.addPanel(PANEL_ID, {
-            title: 'Locales',
-            render: (props) => (
-                <LocalePanel
-                    key={props && typeof props === 'object' && props.key || undefined}
-                    active={!props || props.active}
-                    channel={addons.getChannel()}
-                />
-            )
-        });
+addons.register(ADDON_ID, () => {
+    addons.addPanel(PANEL_ID, {
+        title: 'Locales',
+        render: (props) => {
+            return (
+                <AddonPanel {...props}>
+                    <LocalePanel />
+                </AddonPanel>
+            );
+        }
     });
-}
+});
