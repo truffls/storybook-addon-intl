@@ -1,4 +1,4 @@
-# Intl Addon [![Build Status](https://travis-ci.org/truffls/storybook-addon-intl.svg?branch=master)](https://travis-ci.org/truffls/storybook-addon-intl)
+# Intl Addon
 
 The Intl addon can be used to provide locale switcher and react-intl.
 
@@ -12,79 +12,65 @@ First, install the addon
 npm install -D storybook-addon-intl
 ```
 
-_Note: Following peer dependencies are required: `@storybook/addons`, `@storybook/react`, `react` and `react-intl`._
-
-Add this line to your `addons.js` file (create this file inside your storybook config directory if needed).
+Then, add following content to `.storybook/main.js`:
 
 ```js
-import 'storybook-addon-intl/register';
+export default {
+    addons: ['storybook-addon-intl']
+};
 ```
 
-In your `config.js` import the `setIntlConfig` and `withIntl` function. Use `setIntlConfig` to set the configuration
-for `react-intl` and `withIntl´ as decorator.
+In `.storybook/preview.js`, add the following:
 
 ```js
-import { addDecorator, configure } from '@storybook/react';
-import { setIntlConfig, withIntl } from 'storybook-addon-intl';
-
-// Load the locale data for all your defined locales
-import { addLocaleData } from 'react-intl';
-import enLocaleData from 'react-intl/locale-data/en';
-import deLocaleData from 'react-intl/locale-data/de';
-
-addLocaleData(enLocaleData);
-addLocaleData(deLocaleData);
-
 // Provide your messages
 const messages = {
-    'en': { 'button.label': 'Click me!' },
-    'de': { 'button.label': 'Klick mich!' }
-};
-
-// Provide your formats (optional)
-const formats = {
-    'en': {
-            'date': {
-                'year-only': {
-                    'year': '2-digit',
-                },
-            },
-        },
-    'de': {
-            'date': {
-                'year-only': {
-                    'year': 'numeric',
-                },
-            },
-        },
+    en: { message: 'Just some text.' },
+    de: { message: 'Nur etwas Text.' },
+    es: { message: 'Sólo un texto.' }
 };
 
 const getMessages = (locale) => messages[locale];
-const getFormats = (locale) => formats[locale];
 
-// Set intl configuration
-setIntlConfig({
-    locales: ['en', 'de'],
-    defaultLocale: 'en',
-    getMessages,
-    getFormats,
-});
-
-// Register decorator
-addDecorator(withIntl);
-
-
-// Run storybook
-configure(() => require('./stories'), module);
+export default {
+    paramters: {
+        intl: {
+            locales: defaultLocales,
+            defaultLocale: 'en',
+            getMessages
+        }
+    }
+};
 ```
 
-## Troubleshooting
+## Configuration
 
-##### _Accessing nonexistent addons channel_ error:
-This error can be caused by multiple conflicting versions of `@storybook/addons` in your app.
+Parameter key: `intl`
 
--   Ensure that the entries starting with `@storybook/addon-` in your `package.json` refer to the same and latest version.
--   Add the latest version of `@storybook/addons` to your app's `dependencies` and reinstall all modules.
+### `locales`
 
-If the above steps don't solve the issue, please read the [storybook documentation](https://storybook.js.org/basics/faq/#why-is-there-no-addons-channel) on this topic:
-> Most of the time, the fix is deleting the node_modules folder with any package-lock.json or yarn.lock and reinstalling.
+Type: `string[]`
+
+Available locales.
+
+### `defaultLocale`
+
+Type: `string`
+
+Fallback locale.
+
+### `getMessages`
+
+Type: `(locale: string) => object`
+
+Getter function that takes the active locale as arguments and expects an object of messages as return value.
+
+<small>(See `messages` in [`IntlProvider` docs](https://formatjs.io/docs/react-intl/components#intlprovider) of react-intl)</small>
+
+### `getFormats`
+
+Type: `(locale: string) => object`
+
+Getter function that takes the active locale as arguments and expects an formats objects as return value.
+
+<small>(See `formats` in [`IntlProvider` docs](https://formatjs.io/docs/react-intl/components#intlprovider) of react-intl)</small>

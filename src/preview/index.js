@@ -1,29 +1,19 @@
-import React from 'react';
-import addons from '@storybook/addons';
-import WithIntl from './containers/WithIntl';
-import { EVENT_SET_CONFIG_ID } from '../shared';
-import { omit } from '../utils';
+import { GLOBALS_KEY, PARAMETER_KEY } from '../constants';
+import { withIntl } from './decorators/withIntl';
 
-export let _config = null;
-
-export const setIntlConfig = (config) => {
-    _config = config;
-
-    const channel = addons.getChannel();
-    channel.emit(EVENT_SET_CONFIG_ID, {
-        locales: config.locales,
-        defaultLocale: config.defaultLocale
-    });
+/**
+ * @type {import('@storybook/types').ProjectAnnotations<import('@storybook/types').Renderer>}
+ */
+const preview = {
+    decorators: [withIntl],
+    parameters: {
+        [PARAMETER_KEY]: null
+    },
+    globals: {
+        [GLOBALS_KEY]: {
+            activeLocale: null
+        }
+    }
 };
 
-export const withIntl = (story) => {
-    const channel = addons.getChannel();
-
-    const intlConfig = omit(_config, ['locales', 'getMessages', 'getFormats']);
-
-    return (
-        <WithIntl intlConfig={intlConfig} locales={_config.locales} getMessages={_config.getMessages} getFormats={_config.getFormats} channel={channel}>
-            {story()}
-        </WithIntl>
-    );
-};
+export default preview;
