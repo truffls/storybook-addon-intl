@@ -33,7 +33,7 @@ const messages = {
 const getMessages = (locale) => messages[locale];
 
 export default {
-    paramters: {
+    parameters: {
         intl: {
             locales: defaultLocales,
             defaultLocale: 'en',
