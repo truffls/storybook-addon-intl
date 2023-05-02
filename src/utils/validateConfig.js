@@ -12,7 +12,11 @@ export function validateConfig(config) {
         return 'invalid-get-messages';
     } else if (!!config.getFormats && typeof config.getFormats !== 'function') {
         return 'invalid-get-formats';
+    } else if (
+        !!config.defaultRichTextElements &&
+        typeof config.defaultRichTextElements !== 'object'
+    ) {
+        return 'invalid-rich-text-elements';
     }
-
     return null;
 }
