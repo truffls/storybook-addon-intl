@@ -63,7 +63,7 @@ Fallback locale.
 
 Type: `(locale: string) => object`
 
-Getter function that takes the active locale as arguments and expects an object of messages as return value.
+Getter function that takes the active locale as arguments and expects an `object` of messages as a return value.
 
 <small>(See `messages` in [`IntlProvider` docs](https://formatjs.io/docs/react-intl/components#intlprovider) of react-intl)</small>
 
@@ -71,6 +71,14 @@ Getter function that takes the active locale as arguments and expects an object 
 
 Type: `(locale: string) => object`
 
-Getter function that takes the active locale as arguments and expects an formats objects as return value.
+Getter function that takes the active locale as arguments and expects an `object` of formats as a return value.
 
 <small>(See `formats` in [`IntlProvider` docs](https://formatjs.io/docs/react-intl/components#intlprovider) of react-intl)</small>
+
+### `defaultRichTextElements`
+
+Type: `object`
+
+Object of rich text elements.
+
+<small>(See `defaultRichTextElements` in [`IntlProvider` docs](https://formatjs.io/docs/react-intl/components#intlprovider) of react-intl)</small>

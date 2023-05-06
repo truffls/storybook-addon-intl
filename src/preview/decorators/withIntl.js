@@ -25,7 +25,7 @@ export function withIntl(StoryFn, context) {
         return null;
     }
 
-    const { getMessages, getFormats } = intlConfig;
+    const { getMessages, getFormats, defaultRichTextElements } = intlConfig;
 
     const messages = getMessages(activeLocale);
     const formats =
@@ -36,6 +36,7 @@ export function withIntl(StoryFn, context) {
             locale={activeLocale}
             messages={messages}
             formats={formats}
+            defaultRichTextElements={defaultRichTextElements}
         >
             {StoryFn()}
         </IntlProvider>
