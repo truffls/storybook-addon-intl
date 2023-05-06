@@ -12,6 +12,11 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
+  "files": [
+    "dist",
+    "preview.js",
+    "manager.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/truffls/storybook-addon-intl.git"

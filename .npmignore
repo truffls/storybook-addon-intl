@@ -1,7 +1,0 @@
-.github
-.storybook
-node_modules
-src
-.babelrc.js
-.editorconfig
-jest.config.js
