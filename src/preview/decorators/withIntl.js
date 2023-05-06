@@ -1,4 +1,4 @@
-import { useGlobals } from '@storybook/preview-api';
+import { useGlobals, useEffect } from '@storybook/preview-api';
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { GLOBALS_KEY, PARAMETER_KEY } from '../../constants';
@@ -20,6 +20,14 @@ export function withIntl(StoryFn, context) {
         intlGlobals?.activeLocale,
         intlConfig?.defaultLocale
     );
+
+    useEffect(() => {
+        if (!!error || !activeLocale) {
+            return;
+        }
+
+        document.documentElement.lang = activeLocale;
+    }, [activeLocale]);
 
     if (!!error || !activeLocale) {
         return null;
