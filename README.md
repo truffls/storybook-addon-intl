@@ -1,4 +1,4 @@
-# Intl Addon
+# Storybook Addon Intl
 
 The Intl addon can be used to provide locale switcher and react-intl.
 
