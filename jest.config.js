@@ -1,3 +1,6 @@
-module.exports = {
-    roots: ['<rootDir>/src']
+export default {
+    roots: ['<rootDir>/src'],
+    transform: {
+        '^.+\\.(ts|tsx)$': 'ts-jest'
+    }
 };

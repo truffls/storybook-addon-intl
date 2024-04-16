@@ -1,8 +1,8 @@
-export function getActiveLocale(locales, activeLocale, defaultLocale) {
-    if (!Array.isArray(locales)) {
-        return null;
-    }
-
+export function getActiveLocale(
+    locales: string[],
+    activeLocale: string | null | undefined,
+    defaultLocale: string | null | undefined
+): string | null {
     if (!!activeLocale && locales.includes(activeLocale)) {
         return activeLocale;
     }

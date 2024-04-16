@@ -12,12 +12,12 @@ jobs:
         node-version:
           - 20
           - 18
-          - 16
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run check-format
+      - run: npm ci
+      - run: npm run typecheck
       - run: npm test
+      - run: npm run check-format

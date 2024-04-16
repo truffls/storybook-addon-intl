@@ -1,14 +1,14 @@
 export const defaultLocales = ['en', 'de'];
 
 // Provide your messages
-const messages = {
+export const messages = {
     en: { message: 'Just some text.' },
     de: { message: 'Nur etwas Text.' },
     es: { message: 'Sólo un texto.' }
 };
 
 // Provide your formats (optional)
-const formats = {
+export const formats = {
     en: {
         date: {
             custom: {
@@ -28,22 +28,3 @@ const formats = {
         }
     }
 };
-
-const getMessages = (locale) => messages[locale];
-const getFormats = (locale) => formats[locale];
-
-/**
- * @type {import('@storybook/react').Preview}
- */
-const preview = {
-    parameters: {
-        intl: {
-            locales: defaultLocales,
-            defaultLocale: 'en',
-            getMessages,
-            getFormats
-        }
-    }
-};
-
-export default preview;
