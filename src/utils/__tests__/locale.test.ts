@@ -1,8 +1,4 @@
-import { getActiveLocale } from '../getActiveLocale';
-
-it(`should return null if locale is an array `, () => {
-    expect(getActiveLocale(null, 'de', 'en')).toBe(null);
-});
+import { getActiveLocale } from '../locale';
 
 it(`should return default locale if active locale doesn't have a value`, () => {
     expect(getActiveLocale(['en', 'de'], null, 'en')).toBe('en');

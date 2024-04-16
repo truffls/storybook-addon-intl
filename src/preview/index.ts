@@ -1,10 +1,9 @@
+import type { Renderer, ProjectAnnotations } from '@storybook/types';
 import { GLOBALS_KEY, PARAMETER_KEY } from '../constants';
 import { withIntl } from './decorators/withIntl';
+import { ReactRenderer } from '@storybook/react';
 
-/**
- * @type {import('@storybook/types').ProjectAnnotations<import('@storybook/types').Renderer>}
- */
-const preview = {
+const preview: ProjectAnnotations<ReactRenderer> = {
     decorators: [withIntl],
     parameters: {
         [PARAMETER_KEY]: null
