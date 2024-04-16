@@ -25,7 +25,8 @@
     "check-format": "prettier -c .",
     "typecheck": "tsc",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "prepack": "npm run build"
   },
   "files": [
     "dist",
