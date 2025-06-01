@@ -50,17 +50,10 @@
     "url": "https://github.com/truffls/storybook-addon-intl/issues"
   },
   "homepage": "https://github.com/truffls/storybook-addon-intl#readme",
-  "dependencies": {
-    "@storybook/theming": "^8.0.8"
-  },
   "devDependencies": {
-    "@storybook/components": "^8.0.8",
-    "@storybook/manager-api": "^8.0.8",
-    "@storybook/preview-api": "^8.0.8",
-    "@storybook/react": "^8.0.8",
-    "@storybook/react-vite": "^8.0.8",
-    "@storybook/react-webpack5": "^8.0.8",
-    "@storybook/types": "^8.0.8",
+    "@storybook/react": "^9.0.3",
+    "@storybook/react-vite": "^9.0.3",
+    "@storybook/react-webpack5": "^9.0.3",
     "@types/jest": "^29.5.12",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
@@ -71,7 +64,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.6.5",
-    "storybook": "^8.0.8",
+    "storybook": "^9.0.3",
     "ts-jest": "^29.1.2",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
@@ -79,7 +72,8 @@
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-intl": "^6.0.0"
+    "react-intl": "^6.0.0",
+    "storybook": "^9.0.0"
   },
   "bundler": {
     "exportEntry": "src/index.ts",

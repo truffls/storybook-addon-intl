@@ -1,5 +1,4 @@
-import { AddonPanel } from '@storybook/components';
-import { useChannel, useGlobals } from '@storybook/manager-api';
+import { useChannel, useGlobals } from 'storybook/manager-api';
 import React, { Fragment, useState } from 'react';
 
 import { EVENTS, EventsData, GLOBALS_KEY } from '../../constants';
@@ -56,7 +55,7 @@ export function LocalePanel({ active = false }: LocalPanelProps) {
     };
 
     return (
-        <AddonPanel active={active}>
+        <div hidden={!active}>
             {!intlConfig || !activeLocale || !!parseError ? (
                 <Fragment>
                     {!intlConfig || !parseError ? (
@@ -85,6 +84,6 @@ export function LocalePanel({ active = false }: LocalPanelProps) {
                     onChangeLocale={changeLocale}
                 />
             )}
-        </AddonPanel>
+        </div>
     );
 }

@@ -1,9 +1,5 @@
-import { useChannel, useEffect, useGlobals } from '@storybook/preview-api';
-import type { ReactRenderer } from '@storybook/react';
-import type {
-    StoryContext,
-    PartialStoryFn as StoryFunction
-} from '@storybook/types';
+import type { Decorator } from '@storybook/react';
+import { useChannel, useEffect, useGlobals } from 'storybook/preview-api';
 import React, { Fragment } from 'react';
 import { IntlProvider } from 'react-intl';
 import { parseConfig } from '../../config';
@@ -16,10 +12,7 @@ import {
 import { parseState } from '../../state';
 import { getActiveLocale } from '../../utils/locale';
 
-export function withIntl(
-    StoryFn: StoryFunction<ReactRenderer>,
-    context: StoryContext<ReactRenderer>
-) {
+export const withIntl: Decorator = (StoryFn, context) => {
     const { parameters } = context;
     const rawIntlConfig = parameters[PARAMETER_KEY];
     const { config: intlConfig, error: parseError } =
@@ -80,4 +73,4 @@ export function withIntl(
             {StoryFn()}
         </IntlProvider>
     );
-}
+};

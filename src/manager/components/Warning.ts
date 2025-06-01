@@ -1,4 +1,4 @@
-import { styled } from '@storybook/theming';
+import { styled } from 'storybook/theming';
 
 export const Warning = styled.div(({ theme }) => ({
     background: theme.background.warning,
