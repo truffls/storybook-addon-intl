@@ -1,14 +1,13 @@
-import type { Renderer, ProjectAnnotations } from '@storybook/types';
+import type { Preview } from '@storybook/react';
 import { GLOBALS_KEY, PARAMETER_KEY } from '../constants';
 import { withIntl } from './decorators/withIntl';
-import { ReactRenderer } from '@storybook/react';
 
-const preview: ProjectAnnotations<ReactRenderer> = {
+const preview: Preview = {
     decorators: [withIntl],
     parameters: {
         [PARAMETER_KEY]: null
     },
-    globals: {
+    initialGlobals: {
         [GLOBALS_KEY]: {
             activeLocale: null
         }
