@@ -1,4 +1,12 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "chat.tools.terminal.autoApprove": {
+        "npm run typecheck": true,
+        "npm run test": true,
+        "npm run test:watch": true,
+        "npm run build": true,
+        "npm run build:watch": true,
+        "npm run check-format": true
+    }
 }
