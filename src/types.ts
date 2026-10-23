@@ -19,8 +19,7 @@ export type StorybookAddonIntlConfig = StorybookAddonIntlConfigCommon & {
     getMessages: (
         locale: string
     ) =>
-        | Record<MessageIds, string>
-        | Record<MessageIds, MessageFormatElement[]>;
+        Record<MessageIds, string> | Record<MessageIds, MessageFormatElement[]>;
     getFormats: (locale: string) => CustomFormats;
     defaultRichTextElements?: Record<string, FormatXMLElementFn<ReactNode>>;
 };
