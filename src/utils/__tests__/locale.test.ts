@@ -1,3 +1,4 @@
+import { expect, it } from 'vitest';
 import { getActiveLocale } from '../locale';
 
 it(`should return default locale if active locale doesn't have a value`, () => {
