@@ -1,4 +1,4 @@
-import { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { FormattedDate } from 'react-intl';
 

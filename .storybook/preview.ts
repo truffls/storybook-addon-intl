@@ -1,5 +1,5 @@
 import { defaultLocales, formats, messages } from './intl';
-import { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 
 import './preview.css';
 
