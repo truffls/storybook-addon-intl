@@ -18,6 +18,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
+    "prebuild": "rm -rf dist",
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
     "start": "run-p build:watch 'storybook --quiet'",
