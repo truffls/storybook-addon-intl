@@ -42,7 +42,8 @@ export default defineConfig(async (options) => {
         minify: !options.watch,
         treeshake: true,
         sourcemap: true,
-        clean: true
+        // parallel configs would wipe each other's output; the prebuild script clears dist instead
+        clean: false
     };
 
     const configs: Options[] = [];
