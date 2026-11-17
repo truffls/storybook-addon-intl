@@ -28,9 +28,7 @@
     "prepack": "npm run build"
   },
   "files": [
-    "dist",
-    "preview.js",
-    "manager.js"
+    "dist"
   ],
   "repository": {
     "type": "git",
