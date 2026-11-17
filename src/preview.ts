@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
-import { GLOBALS_KEY, PARAMETER_KEY } from '../constants';
-import { withIntl } from './decorators/withIntl';
+import { GLOBALS_KEY, PARAMETER_KEY } from './constants';
+import { withIntl } from './preview/decorators/withIntl';
 
 const preview: Preview = {
     decorators: [withIntl],
