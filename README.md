@@ -2,6 +2,8 @@
 
 The Intl addon can be used to provide locale switcher and react-intl.
 
+The package is ESM-only and requires Storybook 10. See [Compatibility](#compatibility) for older Storybook versions.
+
 ![](docs/screenshot.png)
 
 ## Getting Started
@@ -12,12 +14,16 @@ First, install the addon
 npm install -D storybook-addon-intl
 ```
 
-Then, add following content to `.storybook/main.js`:
+Then, register it in `.storybook/main.ts`:
 
-```js
-export default {
+```ts
+// Replace react-vite with the framework you use
+import { defineMain } from '@storybook/react-vite/node';
+
+export default defineMain({
+    // ...rest of config
     addons: ['storybook-addon-intl']
-};
+});
 ```
 
 In `.storybook/preview.js`, add the following:
