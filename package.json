@@ -6,13 +6,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.js"
     },
     "./preview": {
       "types": "./dist/preview.d.ts",
-      "import": "./dist/preview.js",
-      "require": "./dist/preview.cjs"
+      "default": "./dist/preview.js"
     },
     "./manager": "./dist/manager.js",
     "./package.json": "./package.json"
@@ -74,9 +72,13 @@
     "storybook": "^10.0.0"
   },
   "bundler": {
-    "exportEntry": "src/index.ts",
-    "managerEntry": "src/manager/index.ts",
-    "previewEntry": "src/preview/index.ts"
+    "managerEntries": [
+      "src/manager.ts"
+    ],
+    "previewEntries": [
+      "src/preview.ts",
+      "src/index.ts"
+    ]
   },
   "storybook": {
     "displayName": "storybook-addon-intl",

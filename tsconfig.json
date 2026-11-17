@@ -9,11 +9,12 @@
         "module": "preserve",
         "moduleResolution": "bundler",
         "noImplicitAny": true,
-        "rootDir": "./src",
+        "resolveJsonModule": true,
+        "rootDir": ".",
         "skipLibCheck": true,
         "target": "esnext",
         "noEmit": true,
         "strict": true
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*", "tsup.config.ts"]
 }
