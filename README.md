@@ -35,13 +35,47 @@ const getMessages = (locale) => messages[locale];
 export default {
     parameters: {
         intl: {
-            locales: defaultLocales,
+            locales: ['en', 'de'],
             defaultLocale: 'en',
             getMessages
         }
     }
 };
 ```
+
+### CSF Next
+
+If you use [CSF Next](https://storybook.js.org/docs/api/csf/csf-next), keep the addon in `.storybook/main.ts` and also register it in `.storybook/preview.ts`:
+
+```ts
+// Replace react-vite with the framework you use
+import { definePreview } from '@storybook/react-vite';
+import intlAddon from 'storybook-addon-intl';
+
+const messages: Record<string, Record<string, string>> = {
+    en: { message: 'Just some text.' },
+    de: { message: 'Nur etwas Text.' }
+};
+
+export default definePreview({
+    addons: [intlAddon()],
+    parameters: {
+        intl: {
+            locales: ['en', 'de'],
+            defaultLocale: 'en',
+            getMessages: (locale: string) => messages[locale]
+        }
+    }
+});
+```
+
+## Compatibility
+
+| storybook-addon-intl | Storybook | react-intl            |
+| -------------------- | --------- | --------------------- |
+| 6.x                  | 10        | 6 to 12               |
+| 5.x                  | 9         | 6 to 7 (5.1: 6 to 12) |
+| 4.x                  | 8         | 6                     |
 
 ## Configuration
 
